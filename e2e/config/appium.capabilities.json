@@ -79,8 +79,30 @@
     "android28": {
         "platformName": "Android",
         "platformVersion": "28",
-        "deviceName": "Emulator-Api28-Google",
-        "avd": "Emulator-Api28-Google",
+        "deviceName": "Pixel_4_API_28",
+        "avd": "Pixel_4_API_28",
+        "lt": 60000,
+        "newCommandTimeout": 720,
+        "noReset": false,
+        "fullReset": false,
+        "app": ""
+    },
+    "android30": {
+        "platformName": "Android",
+        "platformVersion": "30",
+        "deviceName": "Pixel_4_API_30",
+        "avd": "Pixel_4_API_30",
+        "lt": 60000,
+        "newCommandTimeout": 720,
+        "noReset": false,
+        "fullReset": false,
+        "app": ""
+    },
+    "android31": {
+        "platformName": "Android",
+        "platformVersion": "30",
+        "deviceName": "Pixel_4_XL_API_30",
+        "avd": "Pixel_4_XL_API_30",
         "lt": 60000,
         "newCommandTimeout": 720,
         "noReset": false,

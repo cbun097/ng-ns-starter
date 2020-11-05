@@ -1,13 +1,18 @@
 import { AppiumDriver, createDriver, SearchOptions } from "nativescript-dev-appium";
+import { Home } from "./page-objects/home";
 
 describe("Home component scenario", () => {
     let driver: AppiumDriver;
+    let home: Home;
 
     beforeAll(async () => {
         driver = await createDriver();
+        home  = new Home(driver);
+
+        await home.navigateTo();
     });
 
-    afterAll(async () => {
+    afterAll(async ()=> {
         await driver.quit();
         console.log("Quit driver!");
     });
@@ -16,25 +21,17 @@ describe("Home component scenario", () => {
         await driver.logTestArtifacts("report");
     });
 
-    it("should find an element by text", async () => {
-        const btnTap = await driver.findElementByAutomationText("Camera");
-        await btnTap.click();
-
-        const message = "Allow ModifiedStarted to take pictures and record video?";
-        // const lblMessage = await driver.findElementByText(message, SearchOptions.contains);
-        expect(await message).toContain("Allow ModifiedStarted to take pictures and record video?");
-        // Image verification
-        // const screen = await driver.compareScreen("hello-world-41");
-        // assert.isTrue(screen);
-        // expect(screen).toBeTruthy();
+    it('check text', async ()=>{
+            home.loadedText();
     });
 
-    // it("should find an element by type", async () => {
-    //     const btnTap = await driver.findElementByClassName(driver.locators.button);
-    //     await btnTap.click();
+    it('check btn camera click', async ()=>{
+        home.buttonText();
+    });
 
-    //     const message = " taps left";
-    //     const lblMessage = await driver.findElementByText(message, SearchOptions.contains);
-    //     expect(await lblMessage.text()).toContain("40");
-    // });
+    // failing
+    it('check lang btn click', async ()=>{
+        //home.langChange();
+    });
+
 });

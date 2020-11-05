@@ -9,13 +9,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const nativescript_dev_appium_1 = require("nativescript-dev-appium");
-const home_1 = require("./page-objects/home");
-describe("Home component scenario", () => {
+const lang_select_1 = require("./page-objects/lang-select");
+describe("Lang select component scenario", () => {
     let driver;
-    let home;
+    let langSelect;
     beforeAll(() => __awaiter(this, void 0, void 0, function* () {
         driver = yield nativescript_dev_appium_1.createDriver();
-        home = new home_1.Home(driver);
+        langSelect = new lang_select_1.LangSelect(driver);
     }));
     afterAll(() => __awaiter(this, void 0, void 0, function* () {
         yield driver.quit();
@@ -26,14 +26,8 @@ describe("Home component scenario", () => {
             yield driver.logTestArtifacts("report");
         });
     });
-    it('check text', () => __awaiter(this, void 0, void 0, function* () {
-        home.loadedText();
-    }));
-    it('check btn camera click', () => __awaiter(this, void 0, void 0, function* () {
-        home.buttonText();
-    }));
-    it('check lang btn click', () => __awaiter(this, void 0, void 0, function* () {
-        //home.langChange();
+    it('check lang text', () => __awaiter(this, void 0, void 0, function* () {
+        //langSelect.loadedText();
     }));
 });
-//# sourceMappingURL=home.e2e-spect.js.map
+//# sourceMappingURL=lang-select.e2e.spec.js.map
