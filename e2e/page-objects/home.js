@@ -14,15 +14,20 @@ class Home {
         this.driver = driver;
         this.buttonText = () => __awaiter(this, void 0, void 0, function* () {
             const btn = this.driver.findElementByAccessibilityId('cameraBtn');
-            return (yield btn).click();
+            (yield btn).click();
+            //(await this.driver.findElementByText("While using the app")).click();
+            return (yield this.driver.findElementByText("Allow")).click();
         });
         this.loadedText = () => __awaiter(this, void 0, void 0, function* () {
             const title = yield this.driver.findElementByText("Play with NativeScript!!!", nativescript_dev_appium_1.SearchOptions.exact);
             return yield title.exists();
         });
         this.langChange = () => __awaiter(this, void 0, void 0, function* () {
-            const langChange = this.driver.findElementByAccessibilityId("langBtn");
-            return (yield langChange).click();
+            const langChange = yield this.driver.findElementByText("Language select", nativescript_dev_appium_1.SearchOptions.exact);
+            return yield langChange.exists();
+        });
+        this.navigateTo = () => __awaiter(this, void 0, void 0, function* () {
+            return this.driver.navBack();
         });
     }
 }

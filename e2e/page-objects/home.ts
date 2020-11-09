@@ -6,7 +6,9 @@ export class Home {
 
     buttonText = async() => {
         const btn = this.driver.findElementByAccessibilityId('cameraBtn');
-        return (await btn).click();
+        (await btn).click();
+        //(await this.driver.findElementByText("While using the app")).click();
+       return (await this.driver.findElementByText("Allow")).click();
     }
 
     loadedText= async () => {
@@ -15,8 +17,8 @@ export class Home {
     }
 
     langChange = async() => {
-        const langChange = this.driver.findElementByAccessibilityId("langBtn");
-        return (await langChange).click();
+        const langChange = await this.driver.findElementByText("Language select", SearchOptions.exact);
+        return await langChange.exists() ;
     }
 
     navigateTo = async() => {

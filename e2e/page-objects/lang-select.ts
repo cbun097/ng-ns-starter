@@ -7,4 +7,9 @@ export class LangSelect {
         const title = await this.driver.findElementByText("Language selection page", SearchOptions.exact)
         return await title.exists();
     }
+
+    checkBtn = async () => {
+        const btn = await (await this.driver.findElementByAccessibilityId("button")).click();
+        return btn;
+    }
 }

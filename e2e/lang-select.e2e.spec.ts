@@ -10,16 +10,20 @@ describe("Lang select component scenario", () => {
         langSelect  = new LangSelect(driver);
     });
 
-    afterAll(async ()=> {
-        await driver.quit();
-        console.log("Quit driver!");
-    });
+    // afterAll(async ()=> {
+    //     await driver.quit();
+    //     console.log("Quit driver!");
+    // });
 
-    afterEach(async function () {
-        await driver.logTestArtifacts("report");
-    });
+    // afterEach(async function () {
+    //     await driver.logTestArtifacts("report");
+    // });
 
     it('check lang text', async ()=>{
         langSelect.loadedText();
+    });
+
+    it('check lang button click', async ()=>{
+        langSelect.checkBtn();
     });
 });

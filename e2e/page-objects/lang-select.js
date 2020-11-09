@@ -16,6 +16,10 @@ class LangSelect {
             const title = yield this.driver.findElementByText("Language selection page", nativescript_dev_appium_1.SearchOptions.exact);
             return yield title.exists();
         });
+        this.checkBtn = () => __awaiter(this, void 0, void 0, function* () {
+            const btn = yield (yield this.driver.findElementByAccessibilityId("button")).click();
+            return btn;
+        });
     }
 }
 exports.LangSelect = LangSelect;

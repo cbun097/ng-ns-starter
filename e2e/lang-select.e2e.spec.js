@@ -17,17 +17,18 @@ describe("Lang select component scenario", () => {
         driver = yield nativescript_dev_appium_1.createDriver();
         langSelect = new lang_select_1.LangSelect(driver);
     }));
-    afterAll(() => __awaiter(this, void 0, void 0, function* () {
-        yield driver.quit();
-        console.log("Quit driver!");
-    }));
-    afterEach(function () {
-        return __awaiter(this, void 0, void 0, function* () {
-            yield driver.logTestArtifacts("report");
-        });
-    });
+    // afterAll(async ()=> {
+    //     await driver.quit();
+    //     console.log("Quit driver!");
+    // });
+    // afterEach(async function () {
+    //     await driver.logTestArtifacts("report");
+    // });
     it('check lang text', () => __awaiter(this, void 0, void 0, function* () {
-        //langSelect.loadedText();
+        langSelect.loadedText();
+    }));
+    it('check lang button click', () => __awaiter(this, void 0, void 0, function* () {
+        langSelect.checkBtn();
     }));
 });
 //# sourceMappingURL=lang-select.e2e.spec.js.map
