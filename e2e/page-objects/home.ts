@@ -7,13 +7,13 @@ export class Home {
     buttonText = async() => {
         const btn = this.driver.findElementByAccessibilityId('cameraBtn');
         (await btn).click();
-        //(await this.driver.findElementByText("While using the app")).click();
-       return (await this.driver.findElementByText("Allow")).click();
+        (await this.driver.findElementByText("While using the app")).click();
+        return (await this.driver.findElementByText("Allow")).click();
     }
 
     loadedText= async () => {
         const title = await this.driver.findElementByText("Play with NativeScript!!!", SearchOptions.exact);
-        return await title.exists()
+        return await title.exists();
     }
 
     langChange = async() => {

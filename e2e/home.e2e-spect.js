@@ -22,7 +22,7 @@ describe("Home component scenario", () => {
     }));
     // work on it - need to check special permission
     it('check btn camera click', () => __awaiter(this, void 0, void 0, function* () {
-        //home.buttonText();
+        home.buttonText();
     }));
     it('check lang btn text', () => __awaiter(this, void 0, void 0, function* () {
         home.langChange();

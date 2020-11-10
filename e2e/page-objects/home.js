@@ -15,7 +15,7 @@ class Home {
         this.buttonText = () => __awaiter(this, void 0, void 0, function* () {
             const btn = this.driver.findElementByAccessibilityId('cameraBtn');
             (yield btn).click();
-            //(await this.driver.findElementByText("While using the app")).click();
+            (yield this.driver.findElementByText("While using the app")).click();
             return (yield this.driver.findElementByText("Allow")).click();
         });
         this.loadedText = () => __awaiter(this, void 0, void 0, function* () {
